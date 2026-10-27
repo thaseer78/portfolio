@@ -1,0 +1,95 @@
+import type { Project } from '../types'
+// Edit freely. Add `links.live` / `links.source` only with verified URLs; missing links are omitted.
+export const projects: Project[] = [
+  {
+    id: 'nova-ai',
+    title: 'NOVA AI',
+    category: 'ai',
+    categoryLabel: 'AI Systems',
+    mockup: 'chat',
+    tagline: 'A personal AI assistant combining conversational intelligence with practical desktop automation.',
+    summary: 'Jarvis-inspired assistant with conversational intelligence, voice interaction, memory retention and desktop automation.',
+    problem: 'Assistants that forget context or depend wholly on hosted models are limited. NOVA AI explores persistent memory and a split between local and hosted inference.',
+    approach: 'A React + Vite client talks to a FastAPI backend. SQLite stores memory; Ollama serves local models while a hosted API (Groq) can serve inference when deployed.',
+    architecture: ['React + Vite client', 'FastAPI (Python)', 'SQLite memory', 'Ollama / Groq API'],
+    features: ['Conversational interface', 'Voice interaction', 'Memory retention', 'Desktop computer automation'],
+    challenges: [
+      { title: 'Persistent memory', body: 'Designing a SQLite-backed memory layer so context survives between sessions.' },
+      { title: 'Local vs hosted inference', body: 'Separating local Ollama development from hosted deployment on Vercel and Render.' },
+    ],
+    stack: ['React', 'Vite', 'FastAPI', 'Python', 'SQLite', 'Ollama', 'Groq API', 'Vercel', 'Render'],
+    links: {
+      live: 'https://nova-ai-eight-ecru.vercel.app/',
+      source: 'https://github.com/thaseer78/nova-ai',
+    },
+    primaryImage: {
+      src: '/images/nova-ai-dark.png',
+      alt: 'NOVA AI dark theme interface featuring local Llama 3.2 execution, workspace session chat, and context inspector',
+      label: 'Dark Mode · Primary Preview',
+    },
+    secondaryImage: {
+      src: '/images/nova-ai-light.png',
+      alt: 'NOVA AI light theme editorial interface with dual-theme workspace controls',
+      label: 'Light Mode · Case Study',
+      caption: 'Dual-theme design: The light theme creates an editorial reading experience with warm paper tones, while preserving the full context inspector and model controls.',
+    },
+  },
+  {
+    id: 'nova-bites',
+    title: 'NOVA BITES',
+    category: 'web',
+    categoryLabel: 'Web Engineering',
+    mockup: 'menu',
+    tagline: 'A luxury restaurant web experience with refined visuals and polished interaction design.',
+    summary: 'Editorial restaurant site with an interactive menu presentation, responsive layouts and reservation UI flows.',
+    problem: 'Premium hospitality brands need a site that feels as considered as the venue, on every screen size.',
+    approach: 'Component-driven React with Tailwind design tokens and Framer Motion for restrained, purposeful motion.',
+    architecture: ['React + Vite', 'Tailwind CSS tokens', 'Framer Motion', 'Vercel'],
+    features: ['Editorial layout', 'Interactive menu', 'Reservation UI flow', 'Responsive design'],
+    challenges: [
+      { title: 'Motion with restraint', body: 'Keeping animation smooth and meaningful without hurting performance.' },
+      { title: 'Responsive polish', body: 'Preserving the editorial feel from phone to desktop.' },
+    ],
+    stack: ['React', 'Vite', 'Tailwind CSS', 'Framer Motion', 'Vercel'],
+    links: {
+      live: 'https://nova-bites-kdk4.vercel.app/',
+      source: 'https://github.com/thaseer78/nova-bites',
+    },
+    primaryImage: {
+      src: '/images/nova-bites-hero.png',
+      alt: 'NOVA BITES homepage showcase with headline and artisanal burger presentation',
+      label: 'Homepage Experience · Primary Preview',
+    },
+    secondaryImage: {
+      src: '/images/nova-bites-menu.png',
+      alt: 'NOVA BITES interactive menu section featuring artisan burgers, pizzas, and chef specials',
+      label: 'Interactive Menu · Case Study',
+      caption: 'Interactive menu architecture: Crafted for Flavor showcases dish curation with smooth category filtering, chef highlights, and rich food photography.',
+    },
+  },
+  {
+    id: 'engineering-copilot',
+    title: 'Engineering Copilot',
+    category: 'ai',
+    categoryLabel: 'AI Systems',
+    mockup: 'dash',
+    tagline: 'An AI-powered learning platform that helps engineering students organize academic resources and get contextual assistance.',
+    summary: 'Study copilot for engineering students combining resource organization with AI assistance.',
+    problem: 'Students juggle dense subjects and scattered material and need guided, contextual help.',
+    approach: 'A typed React client with LLM API integration. Confirm the exact stack and implemented features before publishing.',
+    architecture: ['React + TypeScript client', 'Application backend', 'LLM APIs'],
+    features: ['Academic dashboard', 'Study resources', 'Contextual AI assistance'],
+    challenges: [
+      { title: 'Contextual answers', body: 'Shaping prompts and context so responses fit the student’s subject.' },
+    ],
+    stack: ['React', 'TypeScript', 'LLM APIs'],
+    links: {
+      source: 'https://github.com/thaseer78/engineering-copilot-mvp',
+    },
+    primaryImage: {
+      src: '/images/engineering-copilot-dashboard.png',
+      alt: 'Engineering Copilot dashboard showing academic stats, subject tracker, AI study focus, exam countdown, and matched opportunities',
+      label: 'Dashboard · Primary Preview',
+    },
+  },
+]

@@ -1,0 +1,80 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --line: rgba(255, 255, 255, 0.09);
+  --line-hi: rgba(212, 197, 169, 0.45);
+  --header-height: 82px;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-height) + 16px);
+}
+
+body {
+  @apply bg-ink text-chalk font-sans antialiased overflow-x-hidden;
+  margin: 0;
+  min-width: 320px;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+img,
+video,
+canvas {
+  max-width: 100%;
+}
+
+:focus-visible {
+  outline: 2px solid #D4C5A9;
+  outline-offset: 3px;
+}
+
+::selection {
+  background: #D4C5A9;
+  color: #0D0D0E;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+@layer components {
+  .lbl {
+    @apply font-mono text-[11px] uppercase tracking-[0.18em] text-gold;
+  }
+
+  .wrap {
+    @apply mx-auto w-full max-w-[1440px] px-5 sm:px-8 lg:px-12 xl:px-16;
+  }
+
+  .btn {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-[color:var(--line)] px-6 py-3 text-sm font-medium transition-colors duration-300 hover:border-[color:var(--line-hi)];
+  }
+
+  .btn-p {
+    @apply border-gold bg-gold text-ink hover:bg-chalk;
+  }
+
+  .fld {
+    @apply w-full rounded-xl border border-[color:var(--line)] bg-surf px-4 py-3 text-base outline-none transition-colors focus:border-[color:var(--line-hi)];
+  }
+}
